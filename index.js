@@ -6,6 +6,8 @@ require('./lib/array-concatAll')
 
 const server = require('./lib/server')
 
-server.listen(process.env.PORT, () => {
-  console.log(`app run on http://0.0.0.0:${process.env.PORT}`)
+const port = process.env.PORT || 3100
+
+server.listen(port, () => {
+  console.log(`app run on http://0.0.0.0:${port}`)
 })
