@@ -13,8 +13,8 @@ test('search videos', async t => {
   t.is(videos.length, 1)
 })
 
-test.only('decode link back up', t => {
-  const link = aes.dec('U2FsdGVkX1+TkfeDlTgOnw6ThlOjwfLUROCjTsVXPVLiXvQx5Z7nRYMJgy9mlya9X7ufnGW1kpjx0pyxdR3fgn9VwYjmwgyOxVH+9MPHw4CFMIykVCCYvowFTcTz52n3D11ZTYiIz8q5HRwFtRCwCrpdEFmYINgNCTnxxY0t1LM=', 'bilutv.com45904818773916')
-  console.log(link)
-  t.pass()
-})
+// test.only('decode link back up', t => {
+//   const link = aes.dec('U2FsdGVkX1+TkfeDlTgOnw6ThlOjwfLUROCjTsVXPVLiXvQx5Z7nRYMJgy9mlya9X7ufnGW1kpjx0pyxdR3fgn9VwYjmwgyOxVH+9MPHw4CFMIykVCCYvowFTcTz52n3D11ZTYiIz8q5HRwFtRCwCrpdEFmYINgNCTnxxY0t1LM=', 'bilutv.com45904818773916')
+//   console.log(link)
+//   t.pass()
+// })

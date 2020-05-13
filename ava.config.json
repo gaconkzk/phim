@@ -1,0 +1,27 @@
+{
+	"ava": {
+		"files": [
+			"test/**/*",
+			"!test/exclude-files-in-this-directory",
+			"!**/exclude-files-with-this-name.*"
+		],
+		"match": [
+			"*oo",
+			"!foo"
+		],
+		"concurrency": 5,
+		"failFast": true,
+		"failWithoutAssertions": false,
+		"environmentVariables": {
+			"MY_ENVIRONMENT_VARIABLE": "some value"
+		},
+		"verbose": true,
+		"require": [
+			"./my-helper-module.js"
+		],
+		"nodeArguments": [
+			"--trace-deprecation",
+			"--napi-modules"
+		]
+	}
+}
