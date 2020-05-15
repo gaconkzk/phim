@@ -18,7 +18,7 @@ uniAd.debugWarn=function(message)
 }
 uniAd.writtenIframes=[];
 uniAd.iframeNoAdCallback=function(data_ifid){
-	console.log("uniAd: data-ifid="+data_ifid+" không có quảng cáo");
+	console.log("uniAd: data-ifid="+data_ifid+" khÃ´ng cÃ³ quáº£ng cÃ¡o");
 }
 uniAd.getCapCount=function(bannerid){
 	var cookieName='uniad_capcount_'+bannerid;
@@ -97,7 +97,7 @@ uniAd._initPauseAdCssHtml=function(){
     </style>';
     jQuery('head').append(pauseAdCss);
     var container=jwPlayerObj.getContainer();
-    jQuery(container).append('<div class="vtlai-pause-ad" style=""><div class="pause-ad-wrapper"></div><div class="pause-ad-close">Đóng</div></div>');
+    jQuery(container).append('<div class="vtlai-pause-ad" style=""><div class="pause-ad-wrapper"></div><div class="pause-ad-close">ÄÃ³ng</div></div>');
     _pauseAdElement=jQuery(container).find('.vtlai-pause-ad')[0];
     _pauseAdCodeElement=jQuery(container).find('.vtlai-pause-ad .pause-ad-wrapper')[0];
     _pauseAdCloseElement=jQuery(container).find('.vtlai-pause-ad .pause-ad-close')[0];
@@ -110,7 +110,7 @@ uniAd._initPauseAd=function(width,height,html){
         var height=100;
     if(typeof html!="string" || html=="")
     {
-        console.error('FxPlayer: Mã PauseAd HTML không được trống');
+        console.error('FxPlayer: MÃ£ PauseAd HTML khÃ´ng ÄÆ°á»£c trá»ng');
         return false;
     }
 
@@ -131,7 +131,7 @@ uniAd._initPauseAd=function(width,height,html){
                 var _p=_pauseAdJwPlayer;
                 _p.on('play',function(){
                     jQuery(_pauseAdElement).removeClass('closed');
-                    //--Hoán Ad
+                    //--HoÃ¡n Ad
                     try{
                         var containerElem=this.getContainer();
                         var containerId=jQuery(containerElem).attr("id");
@@ -147,7 +147,7 @@ uniAd._initPauseAd=function(width,height,html){
                 
             }
 			try{
-				//--Xử lý dạng code
+				//--Xá»­ lÃ½ dáº¡ng code
 				var listPauseAd=jQuery(_pauseAdElement).find('.pause-ad-wrapper > div.uniad-ad-wraper[id^="uniad-zone-"]');
 				listPauseAd.each(function(index){
 					var adCode=jQuery(this).html();
@@ -160,7 +160,7 @@ uniAd._initPauseAd=function(width,height,html){
         console.log("FxPlayer: init pauseAd complete!");
         return _pauseAdElement;
     }catch(err){
-        console.error('FxPlayer: Lỗi khởi tạo PauseAd => '+err.message);
+        console.error('FxPlayer: Lá»i khá»i táº¡o PauseAd => '+err.message);
         return false;
     }
 }
@@ -441,14 +441,14 @@ uniAd.impression={
 		var zoneId=uniAd.impression.getTrueId(zoneId);
 		if(!zoneId)
 		{
-			uniAd.debugWarn("uniAd-delayTrack: Đã hủy vì zoneId không hợp lệ zoneId=>");
+			uniAd.debugWarn("uniAd-delayTrack: ÄÃ£ há»§y vÃ¬ zoneId khÃ´ng há»£p lá» zoneId=>");
 			uniAd.debugWarn(zoneId);
 			return false;
 		}
 		var url=uniAd.impression.getUrlZoneId(zoneId,true);
 		if(url=='')
 		{
-			uniAd.debugWarn("uniAd-delayTrack: Đã hủy vì không lấy đc TrackingUrl,zoneId="+zoneId);
+			uniAd.debugWarn("uniAd-delayTrack: ÄÃ£ há»§y vÃ¬ khÃ´ng láº¥y Äc TrackingUrl,zoneId="+zoneId);
 			return false;
 		}
 		uniAd.impression.delayUrls.push(url);
@@ -469,7 +469,7 @@ uniAd.getZoneType=function(zoneId)
 {
 	if(typeof zoneId!='number' && typeof zoneId!='string')
 	{
-		uniAd.debugWarn("uniAd-getZoneType: ZoneId không hợp lệ=>");
+		uniAd.debugWarn("uniAd-getZoneType: ZoneId khÃ´ng há»£p lá»=>");
 		uniAd.debugWarn(zoneId);
 		return '';
 	}
@@ -489,20 +489,20 @@ uniAd.displayZone=function(zoneId)
 		
 		/*
 		
-		//--Kiểm tra phim có cảnh nóng không
-		var tags=['cảnh+nóng','tình+dục','cô+giáo+thảo'];
+		//--Kiá»m tra phim cÃ³ cáº£nh nÃ³ng khÃ´ng
+		var tags=['cáº£nh+nÃ³ng','tÃ¬nh+dá»¥c','cÃ´+giÃ¡o+tháº£o'];
 		var currentUrl=decodeURIComponent(window.location.href);
 		
 		for(var i=0;i<tags.length;i++)
 		{
 			if(currentUrl.indexOf(tags[i])!=-1)
 			{
-				console.warn(zoneId+': Phim có cảnh nóng từ Url!');
+				console.warn(zoneId+': Phim cÃ³ cáº£nh nÃ³ng tá»« Url!');
 				return false;
 			}
 			if(jQuery('ul.tag-list').find('a[href="tags/'+tags[i]+'/"]').length>0)
 			{
-				console.warn(zoneId+': Phim có cảnh nóng từ Tag!');
+				console.warn(zoneId+': Phim cÃ³ cáº£nh nÃ³ng tá»« Tag!');
 				return false;
 			}
 		}
@@ -511,7 +511,7 @@ uniAd.displayZone=function(zoneId)
 		
 		if(typeof uniAd.bodyCodes['zone'+zoneId]=="object")
 		{
-			//--Nếu đây là 1 array thì chọn random
+			//--Náº¿u ÄÃ¢y lÃ  1 array thÃ¬ chá»n random
 			if(Array.isArray(uniAd.bodyCodes['zone'+zoneId])){
 				var _adList=uniAd.bodyCodes['zone'+zoneId];
 				if(_adList.length==0){
@@ -525,18 +525,18 @@ uniAd.displayZone=function(zoneId)
 					console.log(_tmp);
 					var currentCapCount=uniAd.getCapCount(_tmp.bannerId);
 					if(currentCapCount>=2){
-						console.log("Phát hiện cap 2 Mobilepopup");
+						console.log("PhÃ¡t hiá»n cap 2 Mobilepopup");
 						uniAd.bodyCodes['zone'+zoneId].splice(_selectKey,1);
-						console.log("Đã loại bỏ banner: "+_tmp.bannerId);
+						console.log("ÄÃ£ loáº¡i bá» banner: "+_tmp.bannerId);
 						return uniAd.displayZone(zoneId);
 					}
 				}
 				if(_tmp.zoneType=="preload"){
 					var currentCapCount=uniAd.getCapCount(_tmp.bannerId);
 					if(currentCapCount>=2){
-						console.log("Phát hiện cap 2 preload");
+						console.log("PhÃ¡t hiá»n cap 2 preload");
 						uniAd.bodyCodes['zone'+zoneId].splice(_selectKey,1);
-						console.log("Đã loại bỏ banner: "+_tmp.bannerId);
+						console.log("ÄÃ£ loáº¡i bá» banner: "+_tmp.bannerId);
 						return uniAd.displayZone(zoneId);
 					}
 				}
@@ -549,48 +549,48 @@ uniAd.displayZone=function(zoneId)
 			
 			if(userAgent.indexOf('smarttv')!=-1 || userAgent.indexOf('smart-tv')!=-1)
 			{
-				uniAd.debugWarn("uniAd: Quảng cáo không hiện vì phát hiện SmartTV");
+				uniAd.debugWarn("uniAd: Quáº£ng cÃ¡o khÃ´ng hiá»n vÃ¬ phÃ¡t hiá»n SmartTV");
 				return false;
 			}
 			if(typeof device!="undefined" && (device.mobile() || device.tablet()) && htmlCode.indexOf('mobile')==-1)
 			{
-				uniAd.debugWarn("uniAd: Quảng cáo không hiện vì phát hiện mobile hoặc tablet");
+				uniAd.debugWarn("uniAd: Quáº£ng cÃ¡o khÃ´ng hiá»n vÃ¬ phÃ¡t hiá»n mobile hoáº·c tablet");
 				return false;
 			}
 			else if(typeof device!="undefined" && !device.mobile() && !device.tablet() && zoneType.indexOf('mobile')!=-1)
 			{
-				uniAd.debugWarn("uniAd: Quảng cáo không hiện vì phát hiện code quảng cáo mobile chạy trên PC");
+				uniAd.debugWarn("uniAd: Quáº£ng cÃ¡o khÃ´ng hiá»n vÃ¬ phÃ¡t hiá»n code quáº£ng cÃ¡o mobile cháº¡y trÃªn PC");
 				return false;
 			}
 			
 
 			if(zoneType=="preload" && typeof UNIAD_DISABLE_PRELOAD!="undefined" && UNIAD_DISABLE_PRELOAD)
 			{
-				uniAd.debugWarn("uniAd: Vị trí preload bị vô hiệu hóa do cờ hiệu UNIAD_DISABLE_PRELOAD");
+				uniAd.debugWarn("uniAd: Vá» trÃ­ preload bá» vÃ´ hiá»u hÃ³a do cá» hiá»u UNIAD_DISABLE_PRELOAD");
 				return false
 			}
 			
 			if((zoneType=="floatleft" || zoneType=="floatright") && typeof UNIAD_DISABLE_FLOATING!="undefined" && UNIAD_DISABLE_FLOATING)
 			{
-				uniAd.debugWarn("uniAd: Vị trí "+zoneType+" bị vô hiệu hóa do cờ hiệu UNIAD_DISABLE_FLOATING");
+				uniAd.debugWarn("uniAd: Vá» trÃ­ "+zoneType+" bá» vÃ´ hiá»u hÃ³a do cá» hiá»u UNIAD_DISABLE_FLOATING");
 				return false
 			}
 			
 			if(zoneType=="floatleft" && typeof UNIAD_DISABLE_FLOATLEFT!="undefined" && UNIAD_DISABLE_FLOATLEFT)
 			{
-				uniAd.debugWarn("uniAd: Vị trí floatleft bị vô hiệu hóa do cờ hiệu UNIAD_DISABLE_FLOATING");
+				uniAd.debugWarn("uniAd: Vá» trÃ­ floatleft bá» vÃ´ hiá»u hÃ³a do cá» hiá»u UNIAD_DISABLE_FLOATING");
 				return false
 			}
 			
 			if(zoneType=="floatright" && typeof UNIAD_DISABLE_FLOATRIGHT!="undefined" && UNIAD_DISABLE_FLOATRIGHT)
 			{
-				uniAd.debugWarn("uniAd: Vị trí floatright bị vô hiệu hóa do cờ hiệu UNIAD_DISABLE_FLOATRIGHT");
+				uniAd.debugWarn("uniAd: Vá» trÃ­ floatright bá» vÃ´ hiá»u hÃ³a do cá» hiá»u UNIAD_DISABLE_FLOATRIGHT");
 				return false
 			}
 			
 			if(zoneType=="balloon" && typeof UNIAD_DISABLE_BALLOON!="undefined" && UNIAD_DISABLE_BALLOON)
 			{
-				uniAd.debugWarn("uniAd: Vị trí balloon bị vô hiệu hóa do cờ hiệu UNIAD_DISABLE_BALLOON");
+				uniAd.debugWarn("uniAd: Vá» trÃ­ balloon bá» vÃ´ hiá»u hÃ³a do cá» hiá»u UNIAD_DISABLE_BALLOON");
 				return false
 			}
 			
@@ -607,19 +607,19 @@ uniAd.displayZone=function(zoneId)
 			if(zoneType!="preload" && zoneType!="preplay")
 			{
 				uniAd.impression.delayTrack(zoneId);
-				uniAd.debugLog("uniAd: Đã delayTrack zoneId: "+zoneId);
+				uniAd.debugLog("uniAd: ÄÃ£ delayTrack zoneId: "+zoneId);
 			}
 			else
 			{
-				uniAd.debugWarn("uniAd: Không delayTrack zoneId: "+zoneId);
+				uniAd.debugWarn("uniAd: KhÃ´ng delayTrack zoneId: "+zoneId);
 			}
-			uniAd.debugLog("uniAd: Đã hiển thị zoneId: "+zoneId);
+			uniAd.debugLog("uniAd: ÄÃ£ hiá»n thá» zoneId: "+zoneId);
 			uniAd.debugLog(uniAd.bodyCodes['zone'+zoneId]);
 			uniAd.debugLog("htmlCode: "+htmlCode);
 		}
 		else
 		{
-			uniAd.debugWarn("Không tìm thấy code của zone: "+zoneId);
+			uniAd.debugWarn("KhÃ´ng tÃ¬m tháº¥y code cá»§a zone: "+zoneId);
 		}
 	}catch(err){
 		console.error(err.message);
@@ -778,7 +778,7 @@ jQuery(document).ready(function(){
 			var currentCapCount=uniAd.getCapCount(bannerId);
 			if(currentCapCount>=2){
 				jQuery('.uniad-zonetype-preload').remove();
-				console.log("uniAd: preload ngưng hiện vì đã xem 2 lần.");
+				console.log("uniAd: preload ngÆ°ng hiá»n vÃ¬ ÄÃ£ xem 2 láº§n.");
 				return false;
 			}
 			
@@ -786,18 +786,18 @@ jQuery(document).ready(function(){
 			{
 				return false;
 			}
-			//--Nếu size màn hình nhỏ
+			//--Náº¿u size mÃ n hÃ¬nh nhá»
 			if(typeof window.screen.width=='number' && window.screen.width<1280)
 			{
 				return false;
 			}
-			//--Nếu là smartphone có thể xoay
+			//--Náº¿u lÃ  smartphone cÃ³ thá» xoay
 			if(typeof window.orientation != 'undefined')
 			{
 				return false;
 			}
 			jQuery('.uniad-zonetype-preload').wrap('<div class="uniad-zonetype-preload-container"/>');
-			jQuery('.uniad-zonetype-preload').append('<a class="close" href="javascript:void(0);">Đóng</a>');
+			jQuery('.uniad-zonetype-preload').append('<a class="close" href="javascript:void(0);">ÄÃ³ng</a>');
 			jQuery('.uniad-zonetype-preload > .close').click(function(){
 				jQuery('.uniad-zonetype-preload-container').fadeOut('fast',function(){
 					jQuery(this).remove();
@@ -808,7 +808,7 @@ jQuery(document).ready(function(){
 			});
 
 			jQuery('.uniad-zonetype-preload').css('display','block');
-			//--Định vị trí
+			//--Äá»nh vá» trÃ­
 			var boxWidth=jQuery('.uniad-zonetype-preload-container').outerWidth();
 			var boxHeight=jQuery('.uniad-zonetype-preload-container').outerHeight();
 			var winHeight=jQuery(window).height();
@@ -851,7 +851,7 @@ jQuery(document).ready(function(){
 		}
 		else
 		{
-			console.error('Không tìm thấy: #uniad-balloon-wrapper');
+			console.error('KhÃ´ng tÃ¬m tháº¥y: #uniad-balloon-wrapper');
 		}
 	}
 	uniAd.balloonBannerHandle();
@@ -865,17 +865,17 @@ jQuery(document).ready(function(){
 	{
 		if(jQuery(playerSelector).length==0)
 		{
-			console.error('Không xác định được player: '+playerSelector);
+			console.error('KhÃ´ng xÃ¡c Äá»nh ÄÆ°á»£c player: '+playerSelector);
 		}
 		else
 		{
-			//--Đóng khung quảng cáo prePlayer
+			//--ÄÃ³ng khung quáº£ng cÃ¡o prePlayer
 			uniAd.prePlayer.close=function(){
 				jQuery('#uniad-preplayer-wrapper').fadeOut('fast',function(){
 					jQuery(this).remove();
 				});
 			}
-			//--Tự động đóng khung quảng cáo
+			//--Tá»± Äá»ng ÄÃ³ng khung quáº£ng cÃ¡o
 			uniAd.prePlayer.autoClose=function(second){
 				if(typeof second=='undefined')
 				{
@@ -891,12 +891,12 @@ jQuery(document).ready(function(){
 				jQuery('#uniad-preplayer-countdown').html(leftTime);
 				setTimeout("uniAd.prePlayer.autoClose("+leftTime+")",1000);
 			}
-			//--Hiển thị quảng cáo
+			//--Hiá»n thá» quáº£ng cÃ¡o
 			var prePlayerHtml='<div id="uniad-preplayer-wrapper">\
 					<div class="uniad-preplayer-header">\
 						<span id="uniad-preplayer-countdown" class="countdown"></span>\
-						Player đang được tải lên....\
-						<a id="uniad-preplayer-close" class="close" rel="nofollow" onclick="uniAd.prePlayer.close();return false;">Bỏ qua</a>\
+						Player Äang ÄÆ°á»£c táº£i lÃªn....\
+						<a id="uniad-preplayer-close" class="close" rel="nofollow" onclick="uniAd.prePlayer.close();return false;">Bá» qua</a>\
 					</div>\
 					<div id="uniad-preplayer-content">\
 						\
@@ -985,7 +985,7 @@ jQuery(document).ready(function(){
 			//--Track Impression
 			uniAd.impression.trackByType('preplay');
 			
-			uniAd.debugLog('uniAd-preroll: Đã hiện quảng cáo preroll');
+			uniAd.debugLog('uniAd-preroll: ÄÃ£ hiá»n quáº£ng cÃ¡o preroll');
 		}
 		
 		window.hidePrerollAds=function(remove)
@@ -994,7 +994,7 @@ jQuery(document).ready(function(){
 			if(typeof remove!="undefined" || remove || (typeof window.canHidePreroll=="undefined" || !window.canHidePreroll))
 			{
 				window.prerollObject.destroy();
-				uniAd.debugLog('uniAd-preroll: Đã hủy preroll');
+				uniAd.debugLog('uniAd-preroll: ÄÃ£ há»§y preroll');
 				return true;
 			}
 			jQuery('#uniad-preroll-container').css({'width':'0','height':'0'});
@@ -1008,7 +1008,7 @@ jQuery(document).ready(function(){
 				window.prerollObject.originalPlayer.play(true);
 			}
 			window.prerollTimer=setTimeout("hidePrerollAds(true)",14000);
-			uniAd.debugLog('uniAd-preroll: Đã ẩn preroll');
+			uniAd.debugLog('uniAd-preroll: ÄÃ£ áº©n preroll');
 			return true;
 		}
 		
@@ -1074,7 +1074,7 @@ jQuery(document).ready(function(){
 						"ads": {
 							/*"skipAd": {
 								"enabled": "true",
-								"html": "<p>Bỏ qua</p>",
+								"html": "<p>Bá» qua</p>",
 								"region": {
 										"id": "my-new-skip-ad-button",
 										"verticalAlign": 3,
@@ -1116,7 +1116,7 @@ jQuery(document).ready(function(){
 				'logo.position':'top-right',
 				'logo.link':'http://www.phimmoi.net/',
 				'abouttext':'PhimMoi.Net Preroll Ads 1.0',
-				'aboutlink':'javascript:alert("Liên hệ quảng cáo trên phimmoi.net: sales@uniad.vn")',
+				'aboutlink':'javascript:alert("LiÃªn há» quáº£ng cÃ¡o trÃªn phimmoi.net: sales@uniad.vn")',
 				'skin':'http://www.phimmoi.net/player/v1.2/skins/lightrv5/lightrv5.xml'
 			};
 			return true;
@@ -1144,7 +1144,7 @@ jQuery(document).ready(function(){
 				return vastUrl;
 			}
 			if(this._vastIndex==0)
-				console.error('uniAd Preroll: Không có VastTag để sử dụng');
+				console.error('uniAd Preroll: KhÃ´ng cÃ³ VastTag Äá» sá»­ dá»¥ng');
 			return false;
 		}
 		this.haveNextVast=function(){
@@ -1192,12 +1192,12 @@ jQuery(document).ready(function(){
 		this.setup=function(noRestart){
 			if(typeof UNIAD_DISABLE_PREROLL!="undefined" && UNIAD_DISABLE_PREROLL)
 			{
-				uniAd.debugWarn('uniAd: Flash Preroll bị disable bởi UNIAD_DISABLE_PREROLL');
+				uniAd.debugWarn('uniAd: Flash Preroll bá» disable bá»i UNIAD_DISABLE_PREROLL');
 				return false;
 			}
 			if(this.playerSelector=="")
 			{
-				console.error('Không xác định được selector của player');
+				console.error('KhÃ´ng xÃ¡c Äá»nh ÄÆ°á»£c selector cá»§a player');
 				return false;
 			}
 			
@@ -1216,7 +1216,7 @@ jQuery(document).ready(function(){
 			this._oldCssPos=jQuery(this.playerSelector).css('position');
 			jQuery(this.playerSelector).css({'position': 'relative'});
 			if(jQuery('#uniad-preroll-container').length==0)
-				jQuery(this.playerSelector).append('<div id="uniad-preroll-container"><div id="uniad-preroll-player"></div></div><div class="uniad-preroll-dark" class="uniad-preroll-loading" id="uniad-preroll-loading">Đang tải quảng cáo ...</div><button id="uniad-preroll-skip" title="Bỏ qua quảng cáo" class="uniad-preroll-dark" style="display:none;">Bỏ qua quảng cáo ►</button><div id="uniad-preroll-countdown" style="display:none;"></div>');
+				jQuery(this.playerSelector).append('<div id="uniad-preroll-container"><div id="uniad-preroll-player"></div></div><div class="uniad-preroll-dark" class="uniad-preroll-loading" id="uniad-preroll-loading">Äang táº£i quáº£ng cÃ¡o ...</div><button id="uniad-preroll-skip" title="Bá» qua quáº£ng cÃ¡o" class="uniad-preroll-dark" style="display:none;">Bá» qua quáº£ng cÃ¡o âº</button><div id="uniad-preroll-countdown" style="display:none;"></div>');
 			
 			var ok=this.buildOptions();
 			if(!ok)
@@ -1266,7 +1266,7 @@ jQuery(document).ready(function(){
 					{
 						
 						try{
-							console.log('Ova play media không phải main video');
+							console.log('Ova play media khÃ´ng pháº£i main video');
 							if(
 								(typeof window.prerollObject.startCalled=="undefined" || !window.prerollObject.startCalled) && 
 								(typeof currentItem.duration=="number" && currentItem.duration.toFixed(1).toString()=="2.6") &&
@@ -1279,7 +1279,7 @@ jQuery(document).ready(function(){
 									if(window.prerollObject.skipDelay!=-1)
 										window.prerollObject.countDown();
 								},2000);
-								console.warn('showPrerollAds sau 2s nữa');
+								console.warn('showPrerollAds sau 2s ná»¯a');
 							}
 							else
 							{
@@ -1288,7 +1288,7 @@ jQuery(document).ready(function(){
 									if(window.prerollObject.skipDelay!=-1)
 										window.prerollObject.countDown();
 								},1000);
-								console.warn('showPrerollAds sau 1s nữa');
+								console.warn('showPrerollAds sau 1s ná»¯a');
 								if(typeof currentItem.duration=="number" && currentItem.duration>5)
 								{
 									window.canHidePreroll=true;
@@ -1339,7 +1339,7 @@ jQuery(document).ready(function(){
 			try{
 				if(typeof percent!="number" || percent<0 || percent>100)
 				{
-					uniAd.debugLog("uniAdPreroll: setVolume=>percent phải là số từ 0->100");
+					uniAd.debugLog("uniAdPreroll: setVolume=>percent pháº£i lÃ  sá» tá»« 0->100");
 					return false;
 				}
 				this.volume=percent;
@@ -1374,7 +1374,7 @@ jQuery(document).ready(function(){
 			clearTimeout(window.prerollTimer);
 			this.complete();
 			this.reset();
-			uniAd.debugLog('Đã hủy preroll');
+			uniAd.debugLog('ÄÃ£ há»§y preroll');
 		}
 		this.restart=function(){
 			if(jQuery('#uniad-preroll-container').length>0)
@@ -1506,7 +1506,7 @@ var addPopupClose=function(){
 	/*
 	if(jQuery('#AbdMPopup').length>0 && jQuery('#ab-popup-close').length==0)
 	{
-		jQuery('#AbdMPopup').append('<div id="ab-popup-close">Đóng QC</div>');
+		jQuery('#AbdMPopup').append('<div id="ab-popup-close">ÄÃ³ng QC</div>');
 	
 		jQuery('#ab-popup-close').click(function(){
 			jQuery('#AbdMPopup').remove();
@@ -1518,7 +1518,7 @@ var addPopupClose=function(){
 
 	if(jQuery('div[id^="wrapper-mobile-interstitial-"]').length>0 && jQuery('#yo-popup-close').length==0)
 	{
-		jQuery('div[id^="wrapper-mobile-interstitial-"]').append('<div id="yo-popup-close" class="mb-popup-close">Đóng QC</div>');
+		jQuery('div[id^="wrapper-mobile-interstitial-"]').append('<div id="yo-popup-close" class="mb-popup-close">ÄÃ³ng QC</div>');
 	
 		jQuery('#yo-popup-close').click(function(){
 			jQuery('div[id^="wrapper-mobile-interstitial-"]').remove();
@@ -1531,7 +1531,7 @@ var addPopupClose=function(){
 		if(jQuery('script[src*="moatads.com"]').length>0 && jQuery('div iframe[width='+wW+'][height='+wH+']').length>0 && jQuery('#moatads-popup-close').length==0){
 			var ct=jQuery('div iframe[width='+wW+'][height='+wH+']').parent();
 			if(ct.length>0){
-				jQuery(ct).append('<div id="moatads-popup-close" class="mb-popup-close" style="top:23px;right:23px;">Đóng QC</div>');
+				jQuery(ct).append('<div id="moatads-popup-close" class="mb-popup-close" style="top:23px;right:23px;">ÄÃ³ng QC</div>');
 				jQuery('#moatads-popup-close').click(function(){
 					jQuery(this).parent().remove();
 				});
@@ -1544,7 +1544,7 @@ var addPopupClose=function(){
 				if(jQuery(this).parent().css('position')=='absolute' && (jQuery(this).width()>=300 || jQuery(this).height()>=300) && (typeof jQuery(this).parent().attr('id') =="undefined" || jQuery(this).parent().attr('id')=="") && !jQuery(this).parent().hasClass('jw-media')){
 					var ct=jQuery(this).parent();
 					if(ct.length>0){
-						jQuery(ct).append('<div id="moatads-popup-close" class="mb-popup-close" style="top:23px;right:23px;">Đóng QC</div>');
+						jQuery(ct).append('<div id="moatads-popup-close" class="mb-popup-close" style="top:23px;right:23px;">ÄÃ³ng QC</div>');
 						jQuery('#moatads-popup-close').click(function(){
 							jQuery(this).parent().remove();
 						});
@@ -1563,7 +1563,7 @@ var addPopupClose=function(){
 var addSplitAdClose=function(){
 	if(jQuery('#abd_inview_into').length>0 && jQuery('#close-ab-splitpage-ad').length==0)
 	{
-		jQuery('#abd_inview_into').prepend('<a rel="nofollow" class="close-splitpage-ad" id="close-ab-splitpage-ad">Đóng QC</a>');
+		jQuery('#abd_inview_into').prepend('<a rel="nofollow" class="close-splitpage-ad" id="close-ab-splitpage-ad">ÄÃ³ng QC</a>');
 	
 		jQuery('#close-ab-splitpage-ad').click(function(){
 			jQuery('#abd_inview_into').remove();
@@ -1586,10 +1586,10 @@ jQuery(document).ready(function(){
 	addPopupClose();
 	addSplitAdClose();
 	for(var i=1;i<=30;i++){
-// 		setTimeout(function(){
-// 			addPopupClose();
-// 			addSplitAdClose();
-// 		},300*i);
+		setTimeout(function(){
+			addPopupClose();
+			addSplitAdClose();
+		},300*i);
 	}
 });
 

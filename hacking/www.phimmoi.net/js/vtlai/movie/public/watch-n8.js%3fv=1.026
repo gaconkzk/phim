@@ -64,9 +64,9 @@ var readyCallback=function(){
 	watching.scrollFitOnload();
 	watching.setSkipWaiting(10);
 	try{
-		if(watching.getDeviceType()=="tv"){  //TV thì chèn preroll inline
+		if(watching.getDeviceType()=="tv"){  //TV thÃ¬ chÃ¨n preroll inline
 			watching.addAdBreak("PrerollAds","pre",vastList.tv);
-		}else if(watching.getDeviceType()=="desktop"){//desktop thì chèn thêm 1 ở phút 20
+		}else if(watching.getDeviceType()=="desktop"){//desktop thÃ¬ chÃ¨n thÃªm 1 á» phÃºt 20
 			watching.addAdBreak("Mid20",1200,vastList.desktop);
 		}
 	}catch(err){
@@ -78,7 +78,7 @@ var readyCallback=function(){
 	if(watching.getDeviceType()!="tv"){
 		watching.setupPreroll("media-player-box","media-player");
 	}
-	//--Chọn xem tập đã lưu
+	//--Chá»n xem táº­p ÄÃ£ lÆ°u
 	watching.choiseRememberEpisode();
 	
 	//--Current EpisodeInfo Loaded Callback
@@ -103,7 +103,7 @@ var readyCallback=function(){
 		}catch(err){}
 	});
 	
-	//--Set sự kiện cho các nút chuyển tập khác
+	//--Set sá»± kiá»n cho cÃ¡c nÃºt chuyá»n táº­p khÃ¡c
 	jQuery('a[id^=btn-episode-]').click(function(){
 		try{
 			if(navigator.userAgent.indexOf('UCBrowser')!=-1){
@@ -130,11 +130,11 @@ setTimeout(function(){
 
 setTimeout(function(){
 	try{
-// 		phimMoiPlayer.getJwPlayer().on('adStarted',function(e){
+		phimMoiPlayer.getJwPlayer().on('adStarted',function(e){
 // 			if(typeof window.onAdStarted=="function"){
 // 				window.onAdStarted(e);
 // 			}
-// 		});
+		});
 		phimMoiPlayer.getJwPlayer().setMute(false);
 	}catch(err){}
 },1000);
@@ -285,7 +285,7 @@ jQuery(window).on('message',function(e){
 					var errorId=msgData.source;
 					if(typeof msgData.id=="string")
 						errorId+=msgData.id;
-					jQuery('#media-player #player-embed').html('<div style="text-align: center;margin-top: 26%;">Link này hiện không khả dụng.<br>Hãy thử chọn link dự phòng khác ở bên dưới.</div>');
+					jQuery('#media-player #player-embed').html('<div style="text-align: center;margin-top: 26%;">Link nÃ y hiá»n khÃ´ng kháº£ dá»¥ng.<br>HÃ£y thá»­ chá»n link dá»± phÃ²ng khÃ¡c á» bÃªn dÆ°á»i.</div>');
 					if(window.embedPlayerErrorList.includes(errorId)){
 						return false;
 					}
@@ -332,7 +332,7 @@ jQuery(window).on('message',function(e){
 		try{ 
 			var msgData=jQuery.parseJSON(msgStr);
 			if(typeof msgData=="object" && typeof msgData['name']=="string" && msgData['name']=='nolink'){
-				jQuery('#media-player #player-embed').html('<div style="text-align: center;margin-top: 26%;">Link này hiện không khả dụng.<br>Hãy thử chọn link dự phòng khác ở bên dưới.</div>');
+				jQuery('#media-player #player-embed').html('<div style="text-align: center;margin-top: 26%;">Link nÃ y hiá»n khÃ´ng kháº£ dá»¥ng.<br>HÃ£y thá»­ chá»n link dá»± phÃ²ng khÃ¡c á» bÃªn dÆ°á»i.</div>');
 				fx.hideLoad();
 				watching.selectThirdPartyLink();
 			}

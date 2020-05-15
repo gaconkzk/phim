@@ -690,15 +690,16 @@ var Watching = function () {
     };
     var _0x83dfx59 = {};
     this.addAdBreak = function (_0x83dfx5a, _0x83dfx5b, _0x83dfx5c) {
-        if (typeof _0x83dfx5a == "string" && (typeof _0x83dfx5b == "string" || typeof _0x83dfx5b == "number") && (typeof _0x83dfx5c == "string" || (typeof _0x83dfx5c == "object" && typeof _0x83dfx5c.length == "number" && _0x83dfx5c.length > 0))) {
-            _0x83dfx59[_0x83dfx5a] = {
-                'offset': _0x83dfx5b,
-                'tag': _0x83dfx5c
-            };
-            return true
-        };
-        console.error("FxPlayer: Quảng cáo cần add không hợp lệ.");
-        return false
+//         if (typeof _0x83dfx5a == "string" && (typeof _0x83dfx5b == "string" || typeof _0x83dfx5b == "number") && (typeof _0x83dfx5c == "string" || (typeof _0x83dfx5c == "object" && typeof _0x83dfx5c.length == "number" && _0x83dfx5c.length > 0))) {
+//             _0x83dfx59[_0x83dfx5a] = {
+//                 'offset': _0x83dfx5b,
+//                 'tag': _0x83dfx5c
+//             };
+//             return true
+//         };
+//         console.error("FxPlayer: Quảng cáo cần add không hợp lệ.");
+//         return false
+        return true
     };
     this.removeAdBreak = function (_0x83dfx5a) {
         if (typeof _0x83dfx5a == "string") {
