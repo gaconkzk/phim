@@ -1,5 +1,5 @@
 {
-  "name": "phim",
+  "name": "plimaser",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -37,5 +37,8 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "nodemon": "^2.0.3"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
