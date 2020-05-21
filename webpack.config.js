@@ -11,7 +11,7 @@ module.exports = ['source-map'].map(devtool => ({
     filename: 'server.js',
     path: path.resolve(__dirname, 'dist'),
     library: 'phimaser',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs-module'
   },
   devtool,
   optimization: {

@@ -1,14 +1,5 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("fs"));
-	else if(typeof define === 'function' && define.amd)
-		define(["fs"], factory);
-	else if(typeof exports === 'object')
-		exports["phimaser"] = factory(require("fs"));
-	else
-		root["phimaser"] = factory(root["fs"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE_fs__) {
-return (window["webpackJsonpphimaser"] = window["webpackJsonpphimaser"] || []).push([["main"],{
+module.exports =
+(window["webpackJsonpphimaser"] = window["webpackJsonpphimaser"] || []).push([["main"],{
 
 /***/ "./lib/ctrl.js":
 /*!*********************!*\
@@ -57047,10 +57038,9 @@ function extend() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_fs__;
+module.exports = fs;
 
 /***/ })
 
 },[["./lib/server.js","runtime~main"]]]);
-});
 //# sourceMappingURL=main.server.js.map
