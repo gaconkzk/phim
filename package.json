@@ -6,7 +6,7 @@
   "main": "lib/server.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node dist/server.js",
+    "start": "node index.js",
     "build": "webpack",
     "test": "ava"
   },
