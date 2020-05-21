@@ -1,11 +1,13 @@
 {
-  "name": "plimaser",
-  "version": "1.0.0",
+  "name": "phimaser",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "private": true,
+  "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js",
+    "start": "node dist/server.js",
+    "build": "webpack",
     "test": "ava"
   },
   "keywords": [],
@@ -15,7 +17,6 @@
     "bluebird": "^3.7.2",
     "cheerio": "^0.22.0",
     "compression": "^1.6.2",
-    "consolidate": "^0.14.5",
     "cookie-parser": "^1.4.3",
     "csurf": "^1.9.0",
     "dotenv": "^4.0.0",
@@ -36,6 +37,9 @@
   },
   "devDependencies": {
     "ava": "^0.17.0",
-    "nodemon": "^2.0.3"
+    "clean-webpack-plugin": "^3.0.0",
+    "nodemon": "^2.0.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
